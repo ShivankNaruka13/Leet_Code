@@ -1,1 +1,19 @@
+class Solution {
+    public int majorityElement(int[] nums) {
+        int i,j,count,k=0,key=0;
+        Arrays.sort(nums);
+        for(i=0;i<nums.length;i++){
+            count=0;
+            for(j=i+1;j<nums.length;j++){
+                if(nums[i]==nums[j])
+                count++;
+            }
+            if(k<=count){
+                k=count;
+                key=nums[i];
+            }
 
+        }
+        return key;
+    }
+}
